@@ -4,6 +4,34 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const items = [
+  {
+    "id": 0,
+    "name": "Notebook",
+    "price": 12500, 
+  },
+  {
+    "id": 1,
+    "name": "Computer",
+    "price": 25000, 
+  },
+  {
+    "id": 2,
+    "name": "CPU",
+    "price": 3000, 
+  },
+  {
+    "id": 3,
+    "name": "GPU",
+    "price": 9000, 
+  },
+  {
+    "id": 4,
+    "name": "Smartphone",
+    "price": 32000, 
+  }
+] 
+
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
@@ -11,8 +39,10 @@ import reportWebVitals from './reportWebVitals';
 //   document.getElementById('root')
 // );
 
+
+
 ReactDOM.render(
-  <App />,
+  <App items={items} />,
   document.getElementById('root')
 )
 

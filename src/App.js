@@ -22,44 +22,25 @@ import './App.css';
 //   );
 // }
 
-const items = [
-  {
-    "id": 0,
-    "name": "Notebook",
-    "price": 12500, 
-  },
-  {
-    "id": 1,
-    "name": "Computer",
-    "price": 25000, 
-  },
-  {
-    "id": 2,
-    "name": "CPU",
-    "price": 3000, 
-  },
-  {
-    "id": 3,
-    "name": "GPU",
-    "price": 9000, 
-  },
-  {
-    "id": 4,
-    "name": "Smartphone",
-    "price": 32000, 
-  }
-] 
-
-const listItems = items.map((item) =>
-    <li className="item" id={item.id}>
-      <p>name: {item.name}</p>
-      <p>price: {item.price}</p>
+function ListItem(props) {
+  const key = props.key
+  const name = props.name;
+  const price = props.price
+  return(
+    <li key={key}>
+      <p>name: {name}</p>
+      <p>price: {price}</p>
     </li>
-)
+  )
+}
 
-function App() {
+function App(props) {
+  const items = props.items
+  const listItems = items.map((item) =>
+    <ListItem key={item.id.toString()} name={item.name} price={item.price} />
+  )
   return (
-    <ul className="listItems">
+    <ul>
       {listItems}
     </ul>
   );
