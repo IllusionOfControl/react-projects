@@ -1,36 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import BlogApp from './components/BlogApp.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const items = [
-  {
-    "id": 0,
-    "name": "Notebook",
-    "price": 12500, 
-  },
-  {
-    "id": 1,
-    "name": "Computer",
-    "price": 25000, 
-  },
-  {
-    "id": 2,
-    "name": "CPU",
-    "price": 3000, 
-  },
-  {
-    "id": 3,
-    "name": "GPU",
-    "price": 9000, 
-  },
-  {
-    "id": 4,
-    "name": "Smartphone",
-    "price": 32000, 
-  }
-] 
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -42,7 +16,7 @@ const items = [
 
 
 ReactDOM.render(
-  <App items={items} />,
+  <BlogApp />,
   document.getElementById('root')
 )
 
