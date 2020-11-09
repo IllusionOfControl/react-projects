@@ -5,16 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import BlogApp from './components/BlogApp.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-
-
 ReactDOM.render(
   <BlogApp />,
   document.getElementById('root')

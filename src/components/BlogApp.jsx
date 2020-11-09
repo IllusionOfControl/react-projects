@@ -1,5 +1,6 @@
 import React from 'react'
 import PostsList from './PostsList'
+import PostEdit from './PostEdit'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
@@ -25,6 +26,7 @@ export default class BlogApp extends React.Component {
                 <Row>
                     <Col />
                     <Col xs={8}>
+                        <PostEdit />
                         <PostsList />
                     </Col>
                     <Col />
