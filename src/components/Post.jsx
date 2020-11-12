@@ -6,6 +6,7 @@ export default class Post extends React.Component {
         <div id={this.props.post.id}>
             <h1>{this.props.post.title}</h1>
             <p>{this.props.post.content}</p>
+            <hr></hr>
         </div>
         )
     }

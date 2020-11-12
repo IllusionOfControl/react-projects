@@ -1,21 +1,55 @@
 import React from 'react'
-import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import BLOG_POSTS from '../data'
 
 export default class Navbar extends React.Component {
-    publicatePost() {}
+    constructor(props) {
+        super(props)
+        this.state = {
+            formTitle: "",
+            formContent: ""
+        }
+
+        this.handleInputTitle = this.handleInputTitle.bind(this)
+        this.handleInputContent = this.handleInputContent.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    }
+
+
+    onSubmit(event) {
+        event.preventDefault()
+
+        console.log("aaaaa")
+        const newPost = {
+            id: BLOG_POSTS.length.toString(),
+            title: this.state.formTitle,
+            content: this.state.formContent 
+        }
+
+        const action = this.props.onPostAdd
+
+        action(newPost)
+    }
+
+    handleInputTitle(event) {
+        this.setState({formTitle: event.target.value})
+    }
+
+    handleInputContent(event) {
+        this.setState({formContent: event.target.value})
+    }
+
     render() {
         return (
             <div className="pt-3 pb-3">
                 <h3>Say anything now!</h3>
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Group controlId="formTitle" onChange={this.handleInputTitle}>
                         <Form.Label>Title</Form.Label>
-                        <Form.Control as="text" placeholder="Enter email" />
+                        <Form.Control type="text" />
                     </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group controlId="formContent" onChange={this.handleInputContent}>
                         <Form.Label>Content</Form.Label>
                         <Form.Control as="textarea"/>
                     </Form.Group>

@@ -1,14 +1,26 @@
 import React from 'react'
-import PostsList from './PostsList'
+import PostList from './PostList'
 import PostEdit from './PostEdit'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-//import Navbar from './Navbar'
+import BLOG_POSTS from '../data'
 
 export default class BlogApp extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            posts: BLOG_POSTS
+        }
+    }
+
+    onPostAdd(newPost) {
+        BLOG_POSTS.push(newPost)
+        console.log(BLOG_POSTS.length.toString())
+    }
+
     render() {
         return (
         <>
@@ -26,8 +38,8 @@ export default class BlogApp extends React.Component {
                 <Row>
                     <Col />
                     <Col xs={8}>
-                        <PostEdit />
-                        <PostsList />
+                        <PostEdit onPostAdd={this.onPostAdd} />
+                        <PostList posts={this.state.posts} />
                     </Col>
                     <Col />
                 </Row>
