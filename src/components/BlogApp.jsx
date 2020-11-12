@@ -11,14 +11,20 @@ import BLOG_POSTS from '../data'
 export default class BlogApp extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            posts: BLOG_POSTS
-        }
+        this.state = {posts: []}
+
+        this.handlePostAdd = this.handlePostAdd.bind(this)
     }
 
-    onPostAdd(newPost) {
-        BLOG_POSTS.push(newPost)
-        console.log(BLOG_POSTS.length.toString())
+    componentDidMount() {
+        this.setState({posts: BLOG_POSTS})
+    }
+
+
+    handlePostAdd(newPost) {
+        var newPosts = this.state.posts.slice()
+        newPosts.unshift(newPost)
+        this.setState({posts: newPosts})
     }
 
     render() {
@@ -38,7 +44,7 @@ export default class BlogApp extends React.Component {
                 <Row>
                     <Col />
                     <Col xs={8}>
-                        <PostEdit onPostAdd={this.onPostAdd} />
+                        <PostEdit onPostAdd={this.handlePostAdd} />
                         <PostList posts={this.state.posts} />
                     </Col>
                     <Col />

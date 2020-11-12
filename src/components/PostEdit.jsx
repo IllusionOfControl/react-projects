@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import BLOG_POSTS from '../data'
 
-export default class Navbar extends React.Component {
+export default class PostEdit extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -20,16 +20,13 @@ export default class Navbar extends React.Component {
     onSubmit(event) {
         event.preventDefault()
 
-        console.log("aaaaa")
-        const newPost = {
+        var newPost = {
             id: BLOG_POSTS.length.toString(),
             title: this.state.formTitle,
             content: this.state.formContent 
         }
-
-        const action = this.props.onPostAdd
-
-        action(newPost)
+        
+        this.props.onPostAdd(newPost)
     }
 
     handleInputTitle(event) {
