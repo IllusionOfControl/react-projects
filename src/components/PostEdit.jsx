@@ -25,6 +25,8 @@ export default class PostEdit extends React.Component {
             title: this.state.formTitle,
             content: this.state.formContent 
         }
+
+        event.target.reset()
         
         this.props.onPostAdd(newPost)
     }
