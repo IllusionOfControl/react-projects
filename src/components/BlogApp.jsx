@@ -1,6 +1,7 @@
 import React from 'react'
 import PostList from './PostList'
 import PostEdit from './PostEdit'
+import PostCounter from './PostCounter'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
@@ -45,6 +46,7 @@ export default class BlogApp extends React.Component {
                     <Col />
                     <Col xs={8}>
                         <PostEdit onPostAdd={this.handlePostAdd} />
+                        <PostCounter count={this.state.posts.length}/>
                         <PostList posts={this.state.posts} />
                     </Col>
                     <Col />
