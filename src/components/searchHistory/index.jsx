@@ -1,4 +1,4 @@
-import { Form, Button } from 'react-bulma-components';
+import { Button } from 'react-bulma-components';
 import { Panel } from 'react-bulma-components';
 import 'bulma/css/bulma.min.css';
 import React from 'react'
@@ -33,4 +33,4 @@ class SearchHistory extends React.Component {
     }
 }
 
-export default SearchHistory;
+export default { SearchHistory };

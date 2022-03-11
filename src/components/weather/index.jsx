@@ -1,12 +1,11 @@
-import { Box, Columns, Container, Level, Tile, Notification, Heading, Block, Section, Image } from 'react-bulma-components';
-import { Panel } from 'react-bulma-components';
+import { Box, Columns, Level, Notification, Heading, Block, Image } from 'react-bulma-components';
 import 'bulma/css/bulma.min.css';
 import React from 'react'
 
 
-class WeatherInfo extends React.Component {
+class LocationInfo extends React.Component {
     render() {
-        return (
+        return (            
             <Box>
                 <Level>
                     <Level.Side align='left'>
@@ -27,11 +26,17 @@ class WeatherInfo extends React.Component {
                         </Heading>
                     </Level.Side>
                 </Level>
+            </Box>
+        )
+    }
+}
 
-
+class WeatherInfo extends React.Component {
+    render() {
+        return (
+            <Box>
                 <Columns>
                     <Columns.Column size={8}>
-                        <Box>
                             <Block textSize={6}>
                                 <Heading size={2}>
                                     12°c
@@ -53,20 +58,17 @@ class WeatherInfo extends React.Component {
                                         <Notification color='danger' dark mb='2' p='1'>Wind Speed: 5.75mph</Notification>                                 
                                         <Notification color='danger' dark mb='2' p='1'>Рumidity: 50%</Notification>     
                                     </Columns.Column>
-                                    </Columns>
+                                </Columns>
                             </Block>
-                        </Box>
                     </Columns.Column>
                     
                     <Columns.Column size={4}>
-                        <Box color='success' alignItems='center' size={4}>
                             <Image src='https://openweathermap.org/img/wn/04d@4x.png' size='1by1'/>
-                        </Box>
                     </Columns.Column>
                 </Columns>
-        </Box>
+            </Box>
         )
     }
 }
 
-export default WeatherInfo;
+export { WeatherInfo, LocationInfo };

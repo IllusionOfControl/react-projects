@@ -20,4 +20,4 @@ class SearchBox extends React.Component {
     }
 }
 
-export default SearchBox;
+export default { SearchBox };
