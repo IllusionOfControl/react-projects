@@ -33,4 +33,4 @@ class SearchHistory extends React.Component {
     }
 }
 
-export default { SearchHistory };
+export default SearchHistory;
