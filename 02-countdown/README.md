@@ -1,4 +1,4 @@
-# Tour review
+# Countdown
 
 To launch a project in the project directory:
 
@@ -8,4 +8,4 @@ $ npm start
 ```
 
 Screenshot:
-![screenshot](../_resources/04-tour-review.png)
+![screenshot](../_resources/02-countdown.png)
