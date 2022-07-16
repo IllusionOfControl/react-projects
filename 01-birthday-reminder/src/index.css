@@ -1,0 +1,74 @@
+:root {
+  --clr-background: #dd7b7b;
+  --clr-text: #313131;
+  --clr-white: #fff;
+  --container-width: 500px;
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+body {
+  font-family: 'Segoe UI';
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+}
+
+main {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--clr-white);
+  max-width: var(--container-width);
+  border-radius: 5px;
+  width: 90vw;
+  box-shadow: var(--dark-shadow);
+  padding: 15px 25px;
+}
+
+.container h3 {
+  font-weight: normal;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.person img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.person h4 {
+  margin-bottom: 5px;
+}
+
+.person p {
+  margin-bottom: 0;
+}
