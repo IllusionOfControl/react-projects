@@ -1,6 +1,6 @@
 import Countdown from './Countdown'
 
-const date = new Date('September 7, 2022 00:00:00');
+const date = new Date('September 10, 2022 00:00:00');
 
 const App = () => {
   return (
