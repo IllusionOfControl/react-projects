@@ -8,4 +8,5 @@ $ npm start
 ```
 
 Screenshot:
+
 ![screenshot](../_resources/03-task-list.png)

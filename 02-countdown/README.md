@@ -8,4 +8,5 @@ $ npm start
 ```
 
 Screenshot:
+
 ![screenshot](../_resources/02-countdown.png)
