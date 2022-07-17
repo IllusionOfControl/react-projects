@@ -12,7 +12,7 @@ const Menu = () => {
           return (
             <article key={id} id={id} className='menu-item'>
               <div className="overlay">
-                <button onClick={() => { console.log(id); addToCart(id); }}>Add to cart</button>
+                <button onClick={() => { addToCart(id); }}>Add to cart</button>
               </div>
               <img src={img} alt={title} className='photo' />
               <div className='item-info'>

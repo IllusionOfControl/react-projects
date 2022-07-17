@@ -15,7 +15,6 @@ const reducer = (state, action) => {
     const id = action.payload;
     let isAdded = false;
     const cart = state.cart.map((item) => {
-      console.log(item, id);
       if (item.id === id) {
         isAdded = true;
         return { ...item, amount: item.amount + 1 };
