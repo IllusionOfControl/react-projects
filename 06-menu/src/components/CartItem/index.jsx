@@ -18,13 +18,13 @@ const CartItem = ({ id, img, title, price, amount }) => {
       </div>
       <div>
         {/* increase amount */}
-        <button className='amount-btn' onClick={() => toggleAmount(id, 'inc')}>
+        <button className='amount-btn' onClick={() => {increase(id)}}>
           <AiOutlineArrowUp/>
         </button>
         {/* amount */}
         <p className='amount'>{amount}</p>
         {/* decrease amount */}
-        <button className='amount-btn' onClick={() => toggleAmount(id, 'dec')}>
+        <button className='amount-btn' onClick={() => {decrease(id)}}>
           <AiOutlineArrowDown/>
         </button>
       </div>
