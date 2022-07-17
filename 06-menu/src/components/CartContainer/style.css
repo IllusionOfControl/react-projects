@@ -1,0 +1,42 @@
+@import "../../index.css";
+
+.empty-cart {
+  color: var(--clr-grey-5);
+  margin-top: 1rem;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.cart-section footer {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.cart-section hr {
+  background: var(--clr-primary-5)
+}
+
+.cart-total h4 {
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 1.75rem;
+}
+
+.clear-btn {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+  margin-top: 2.25rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.clear-btn:hover {
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  border-color: var(--clr-primary-5);
+}

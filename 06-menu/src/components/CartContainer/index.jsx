@@ -1,25 +1,38 @@
 import React from "react";
 import { CartItem } from '../../components';
 import { useGlobalContext } from "../../context";
+import './style.css';
 
-const Cart = () => {
-  const { cart, total, clearCart } = useGlobalContext()
+const CartContainer = () => {
+  const { cart, total, clearCart } = useGlobalContext();
+  if (cart.length === 0) {
+    return (
+      <>
+        <h4 className='empty-cart'>Is currently empty</h4>
+      </>
+    )
+  }
   return (
-    <main>
-      <section className="section about-section">
-        <div className="title">
-          <h2>Cart</h2>
-          <div className="underline"></div>
-        </div>
-        <div>
-          {cart.map((item) => {
-            return <CartItem key={item.id} {...item} />
-          })}
-        </div>
-      </section>
-    </main>
+    <>
+      <div>
+        {cart.map((item) => {
+          return <CartItem key={item.id} {...item} />
+        })}
+      </div>
 
+      <footer>
+        <hr />
+        <div className='cart-total'>
+          <h4>
+            Total <span>${total}</span>
+          </h4>
+        </div>
+        <button className='btn clear-btn' onClick={clearCart}>
+          Clear cart
+        </button>
+      </footer>
+    </>
   );
 }
 
-export default Cart;
+export default CartContainer;
