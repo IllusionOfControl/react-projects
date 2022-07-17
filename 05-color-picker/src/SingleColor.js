@@ -12,13 +12,23 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
     return () => clearTimeout(timeout)
   }, [alert])
 
+  const copyToClipboard = async () => {
+    if (window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(hexValue);
+      } catch (err) {
+        console.error('Не удалось скопировать: ', err);
+      }
+    }
+  }
+
   return (
     <article
       className={`color ${index < 10 ? 'color-dark' : 'color-light'}`}
       style={{ backgroundColor: `rgb(${bcg})` }}
       onClick={() => {
-        setAlert(true)
-        navigator.clipboard.writeText(hexValue)
+        setAlert(true);
+        copyToClipboard();
       }}
     >
       <p className='percent-value'>{weight}%</p>

@@ -23,7 +23,7 @@ const App = () =>{
       <section className='container'>
         <h3>color generator</h3>
         <form onSubmit={handleSubmit}>
-        <span class="picker">
+        <span className="picker">
           <input 
             type="color" 
             id="color-picker"
