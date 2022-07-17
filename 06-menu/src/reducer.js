@@ -53,7 +53,7 @@ const reducer = (state, action) => {
   }
 
   if (action.type === 'CLEAR_CART') {
-    return { ...state, cart: [] }
+    return { ...state, cart: [], amount: 0 }
   }
 
   if (action.type === 'REMOVE') {
@@ -62,6 +62,26 @@ const reducer = (state, action) => {
       ...state,
       cart: state.cart.filter((item) => item.id !== id),
     }
+  }
+
+  if (action.type === 'GET_TOTAL') {
+    let { total, amount } = state.cart.reduce(
+      (cartTotal, cartItem) => {
+        const { price, amount } = cartItem
+        const itemTotal = price * amount
+
+        cartTotal.total += itemTotal
+        cartTotal.amount += amount
+        return cartTotal
+      },
+      {
+        total: 0,
+        amount: 0,
+      }
+    )
+    total = parseFloat(total.toFixed(2))
+
+    return { ...state, total, amount }
   }
 }
 

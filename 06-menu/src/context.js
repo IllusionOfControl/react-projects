@@ -50,9 +50,17 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'REMOVE', payload: id })
   }
 
+  const getTotal = () => {
+    dispatch({ type: 'GET_TOTAL' })
+  }
+
   useEffect(() => {
     fetchData();
   }, [])
+
+  useEffect(() => {
+    dispatch({ type: 'GET_TOTAL' })
+  }, [state.cart])
 
   return (
     <AppContext.Provider value={{ ...state, filterMenu, addToCart, increase, decrease, clearCart, remove }}>
