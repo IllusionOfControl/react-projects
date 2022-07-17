@@ -18,8 +18,6 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const [menu, setMenu] = useState([]);
-  // const [categories, setCategories] = useState([]);
 
   const fetchData = async () => {
     dispatch({ type: 'LOADING' })
@@ -29,11 +27,27 @@ const AppProvider = ({ children }) => {
   }
 
   const filterMenu = (category) => {
-    dispatch({type: 'FILTER_MENU', payload: category});
+    dispatch({ type: 'FILTER_MENU', payload: category });
   }
 
   const addToCart = (menu_id) => {
-    dispatch({type: 'ADD_TO_CART', payload: menu_id});
+    dispatch({ type: 'ADD_TO_CART', payload: menu_id });
+  }
+
+  const increase = (id) => {
+    dispatch({ type: 'INCREASE', payload: id })
+  }
+
+  const decrease = (id) => {
+    dispatch({ type: 'DECREASE', payload: id })
+  }
+
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' })
+  }
+
+  const remove = (id) => {
+    dispatch({ type: 'REMOVE', payload: id })
   }
 
   useEffect(() => {
@@ -41,7 +55,7 @@ const AppProvider = ({ children }) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ ...state, filterMenu, addToCart }}>
+    <AppContext.Provider value={{ ...state, filterMenu, addToCart, increase, decrease, clearCart, remove }}>
       {children}
     </AppContext.Provider>
   )
