@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './style.css';
+import { useGlobalContext } from '../../context';
 
 const Navbar = () => {
+  const {amount} = useGlobalContext();
+
   return (
     <nav className='navbar'>
       <div className='nav-center'>
@@ -23,7 +26,7 @@ const Navbar = () => {
           <li>
             <Link to='/cart'>
               <AiOutlineShoppingCart/>
-              <span className='cart-count'>10</span></Link>
+              <span className='cart-count'>{amount}</span></Link>
           </li>
         </ul>
       </div>

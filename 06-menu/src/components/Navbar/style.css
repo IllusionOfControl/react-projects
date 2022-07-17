@@ -67,6 +67,9 @@
     background: var(--clr-black);
     color: var(--clr-white);
     padding: 4px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
     transition: var(--mainTransition);
 }
 
