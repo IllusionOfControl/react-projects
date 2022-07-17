@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 
 const Menu = ({ items }) => {
   return (
@@ -7,6 +8,9 @@ const Menu = ({ items }) => {
         const { id, title, img, desc, price } = menuItem;
         return (
           <article key={id} className='menu-item'>
+            <div className="overlay">
+              <button>Add to cart</button>
+            </div>
             <img src={img} alt={title} className='photo' />
             <div className='item-info'>
               <header>

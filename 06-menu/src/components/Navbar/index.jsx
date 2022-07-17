@@ -7,9 +7,12 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='nav-center'>
-        <Link to='/'>
-            Restaurant
-        </Link>
+        <div className='nav-title'>
+          <Link to='/'>
+              Restaurant
+          </Link>
+        </div>
+        
         <ul className='nav-links'>
           <li>
             <Link to='/'>Our menu</Link>
@@ -19,8 +22,8 @@ const Navbar = () => {
           </li>
           <li>
             <Link to='/cart'>
-                <AiOutlineShoppingCart/>
-                <span className='cart-count'>10</span></Link>
+              <AiOutlineShoppingCart/>
+              <span className='cart-count'>10</span></Link>
           </li>
         </ul>
       </div>

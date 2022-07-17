@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Menu from '../Menu';
-import { Categories } from '../components';
+import { Categories, Menu } from '../components';
 import items from '../data';
 
 const allCategories = ['all', ...new Set(items.map((item) => item.category))];
 
-function Home() {
+const Home = () => {
   const [menuItems, setMenuItems] = useState(items);
   const [categories, setCategories] = useState(allCategories);
 

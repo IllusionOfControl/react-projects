@@ -6,7 +6,6 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--clr-gold);
-    /* box-shadow: var(--lightShadow); */
 }
 
 .nav-center {
@@ -29,6 +28,7 @@
     font-weight: bold;
     margin-right: 0.5rem;
     font-weight: 400;
+    color: var(--clr-black);
     letter-spacing: 2px;
     font-size: 1.2rem;
     padding: 0.25rem 0.5rem;
@@ -37,6 +37,10 @@
 
 .nav-center a:hover {
     color: var(--clr-gold);
+}
+
+.nav-title a {
+    font-size: 1.75rem;
 }
 
 .nav-center a:nth-last-child(1) {

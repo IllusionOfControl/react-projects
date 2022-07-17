@@ -2,6 +2,9 @@ import React from 'react';
 import './style.css';
 
 const Categories = ({ categories, filterItems }) => {
+
+  console.log(categories);
+  
   return (
     <div className="btn-container">
       {categories.map((category, index) => {
