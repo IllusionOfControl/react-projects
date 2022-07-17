@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { Categories, Menu } from '../components';
-import items from '../data';
-
-const allCategories = ['all', ...new Set(items.map((item) => item.category))];
+import {useGlobalContext} from '../context'
 
 const Home = () => {
-  const [menuItems, setMenuItems] = useState(items);
-  const [categories, setCategories] = useState(allCategories);
+  const {menu, categories} = useGlobalContext();
+  const [menuItems, setMenuItems] = useState(menu);
 
   const filterItems = (category) => {
     if (category === 'all') {
-      setMenuItems(items);
+      setMenuItems(menu);
       return;
     }
-    const newItems = items.filter((item) => item.category === category);
+    const newItems = menu.filter((item) => item.category === category);
     setMenuItems(newItems);
   };
 
