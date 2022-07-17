@@ -1,10 +1,10 @@
 import React from 'react';
+import { useGlobalContext } from '../../context';
 import './style.css';
 
-const Categories = ({ categories, filterItems }) => {
+const Categories = () => {
+  const { categories, filterMenu } = useGlobalContext();
 
-  console.log(categories);
-  
   return (
     <div className="btn-container">
       {categories.map((category, index) => {
@@ -13,7 +13,7 @@ const Categories = ({ categories, filterItems }) => {
             type="button"
             className="filter-btn"
             key={index}
-            onClick={() => filterItems(category)}
+            onClick={() => filterMenu(category)}
           >
             {category}
           </button>
