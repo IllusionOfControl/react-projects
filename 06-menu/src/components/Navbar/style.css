@@ -1,0 +1,71 @@
+@import "../../index.css";
+
+.navbar {
+    background: var(--mainWhite);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--clr-gold);
+    /* box-shadow: var(--lightShadow); */
+}
+
+.nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--smallWidth);
+    margin: 0 auto;
+    max-width: var(--fullWidth);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-center a {
+    text-transform: capitalize;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    transition: var(--mainTransition);
+}
+
+.nav-center a:hover {
+    color: var(--clr-gold);
+}
+
+.nav-center a:nth-last-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+.nav-center a svg {
+    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    color: var(--clr-black);
+    transition: var(--mainTransition);
+}
+
+.nav-center a:hover svg {
+    color: var(--clr-gold);
+}
+
+.cart-count {
+    font-size: 0.75rem;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--clr-black);
+    color: var(--clr-white);
+    padding: 4px;
+    transition: var(--mainTransition);
+}
+
+.nav-center a:hover .cart-count {
+    background: var(--clr-gold);
+}
