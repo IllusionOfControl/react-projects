@@ -4,7 +4,7 @@ import { useGlobalContext } from '../../context'
 import './style.css'
 
 const CartItem = ({ id, img, title, price, amount }) => {
-  const { remove, increase, decrease, toggleAmount } = useGlobalContext()
+  const { remove, increase, decrease } = useGlobalContext()
   return (
     <article className='cart-item'>
       <img src={img} alt={title} className='photo'/>

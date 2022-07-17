@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect, useReducer } from 'react'
-import { useCallback } from 'react'
+import React, { useContext, useEffect, useReducer } from 'react'
 import items from './data';
 import reducer from './reducer'
 
@@ -59,7 +58,7 @@ const AppProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    dispatch({ type: 'GET_TOTAL' })
+    getTotal();
   }, [state.cart])
 
   return (

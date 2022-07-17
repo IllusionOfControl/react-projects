@@ -7,7 +7,7 @@ const Menu = () => {
   return (
     <div className='section-center'>
       {menu.map((menuItem) => {
-        if (filter == 'all' || menuItem.category === filter) {
+        if (filter === 'all' || menuItem.category === filter) {
           const { id, title, img, desc, price } = menuItem;
           return (
             <article key={id} id={id} className='menu-item'>

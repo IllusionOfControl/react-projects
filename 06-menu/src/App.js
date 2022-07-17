@@ -1,10 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import {Navbar, Categories} from './components'
-
-import Home from './pages/Home'
-import About from './pages/About'
-import Cart from './pages/Cart'
+import {Navbar} from './components'
+import { Home, About, Cart } from './pages';
 
 const App = () => {
   return (
