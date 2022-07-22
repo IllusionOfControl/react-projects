@@ -9,7 +9,7 @@ const ForecastCard = ({ date, clouds, temp, humidity, clound_icon }) => {
   return (
     <Tile kind="parent">
       <Tile kind="child" renderAs={Notification} color="info">
-        <Heading>{name_of_day}</Heading>
+        <Heading size={4}>{name_of_day}</Heading>
         <Heading subtitle>{formatted_date}</Heading>
         <Image src={image_url} size={128} />
         <Heading subtitle size={5} m='0'>{clouds}</Heading>
