@@ -1,6 +1,6 @@
 import { useContext, useEffect, useReducer, createContext } from 'react';
 import { API_KEY } from './env';
-import { DISPLAY_ITEMS, LOADING, reducer, SEARCH } from './reducer';
+import { CLEAR_HISTORY, DISPLAY_ITEMS, LOADING, reducer, SEARCH } from './reducer';
 
 const AppContext = createContext();
 
@@ -50,8 +50,12 @@ const AppProvider = ({ children }) => {
   }
 
   const searchCity = (city) => {
-    dispatch({ type: SEARCH, payload: city });
+    if (state.search_history[0] !== city)
+      dispatch({ type: SEARCH, payload: city });
   }
+
+  const clearHistory = () => { dispatch({ type: CLEAR_HISTORY }); };
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,7 +76,7 @@ const AppProvider = ({ children }) => {
   }, [state.query]);
 
   return (
-    <AppContext.Provider value={{ ...state, searchCity }}>
+    <AppContext.Provider value={{ ...state, searchCity, clearHistory }}>
       {children}
     </AppContext.Provider>
   )
