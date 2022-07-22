@@ -17,10 +17,10 @@ const AppProvider = ({ children }) => {
 
   const fetchForecast = () => {
     return [
-      { name_of_day: "Monday", clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "04d" },
-      { name_of_day: "Tuesday", clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "04d" },
-      { name_of_day: "Wednesday", clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "04d" },
-      { name_of_day: "Thursday", clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "04d" },
+      { date: new Date(2019, 2, 28), clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "03d" },
+      { date: new Date(2019, 2, 30), clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "04d" },
+      { date: new Date(2019, 2, 31), clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "02d" },
+      { date: new Date(2019, 2, 32), clouds: "Scattered clouds", temp: 20.36, humidity: 60, clound_icon: "01d" },
     ];
   }
 
