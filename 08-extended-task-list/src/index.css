@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #2a2a2a;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  background-color: #111216;
+  color: #999999;
+  width: 350px;
+  margin: 50px auto auto auto;
+  padding-bottom: 8px;
+  margin-bottom: 36px;
+}
+
+.container header {
+  display: flex;
+  background-color: #F94D50;
+  width: 100%;
+  height: 48px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+header h1 {
+  margin-left: 12px;
+  font-size: 25px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 48px;
+  width: 70%;
+}
+
+header button {
+  background: white;
+  border-radius: 15px;
+  border: 0px white;
+  width: 30%;
+  margin-right: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #111216;
+  text-align: center;
+  box-shadow: 0 4px 12px #5e5d5b;
+  font-size: 1rem;
+}
+
+header button:hover {
+  box-shadow: 0 4px 12px #a09999;
+  color: #F94D50;
+}
+
+.taskList {}
+
+.formContainer {
+  padding-top: 12px;
+  width: 100%;
+}
+
+.taskForm {
+  width: 326px;
+  height: 48px;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 0px;
+}
+
+.taskInput {
+  width: 302px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  height: 36px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 100px;
+  background-color: #202023;
+  border: 0;
+  color: #fff;
+}
+
+.taskInput::placeholder {
+  color: gray;
+}
+
+.taskInput:focus {
+  box-shadow: 0px 0px 1pt 1pt #999999;
+  background-color: #111216;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #333333;
+  font-style: italic;
+  /* padding-left:10px; */
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #333333;
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #333333;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: #333333;
+  font-style: italic;
+}
+
+.taskList {
+  width: 350px;
+  margin: auto;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+ul li {
+  background-color: #17181D;
+  height: 48px;
+  width: 314px;
+  padding-left: 12px;
+  margin: 0 auto 10px auto;
+  line-height: 48px;
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+ul li:hover {
+  background-color: #222327;
+}
