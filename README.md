@@ -11,6 +11,7 @@ Projects:
 - [05-color-picker]
 - [06-restaurant]
 - [07-weather-app]
+- [08-extended-task-list]
 
 [course]: https://www.udemy.com/course/react-tutorial-and-projects-course
 [00-blog-app]: 00-blog-app/README.md
@@ -21,3 +22,4 @@ Projects:
 [05-color-picker]: 05-color-picker/README.md
 [06-restaurant]: 06-restaurant/README.md
 [07-weather-app]: 07-weather-app/README.md
+[08-extended-task-list]: 08-extended-task-list/README.md
