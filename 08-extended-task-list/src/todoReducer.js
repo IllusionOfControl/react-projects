@@ -11,6 +11,7 @@ const SET_TASKS = 'SET_TASKS';
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_TASKS:
+      localStorage.setItem('tasks', JSON.stringify(action.payload));
       return {
         ...state,
         tasks: action.payload
@@ -38,12 +39,16 @@ export const removeTask = (task_index) => {
   }
 }
 
-
 export const clearTasks = () => {
   return async (dispatch) => {
     dispatch(setTasks([]));
   }
 }
 
+export const loadTasksFromLocalStorage = () => {
+  return async (dispatch) => {
+    dispatch(setTasks(JSON.parse(localStorage.getItem('tasks')) || []));
+  }
+}
 
 export default todoReducer;

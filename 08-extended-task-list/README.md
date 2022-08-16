@@ -1,6 +1,6 @@
 # Extended task list
 
-_Clone of the **03-task-list** project using the Redux library._
+_Clone of the **03-task-list** project using the Redux library and LocalStorage._
 
 To launch a project in the project directory:
 

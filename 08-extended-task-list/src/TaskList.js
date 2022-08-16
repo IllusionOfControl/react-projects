@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import { addTask, removeTask, clearTasks } from './todoReducer';
+import { addTask, removeTask, clearTasks, loadTasksFromLocalStorage } from './todoReducer';
 
 const mapStateToProps = state => ({
   tasks: state.tasks
@@ -20,6 +20,10 @@ const TaskList = props => {
   useEffect(() => {
     console.log('update');
   }, [props.tasks]);
+
+  useEffect(() => {
+    props.loadTasksFromLocalStorage();
+  }, [])
 
   return (
     <section className="container">
@@ -43,4 +47,4 @@ const TaskList = props => {
   )
 }
 
-export default connect(mapStateToProps, { addTask, removeTask, clearTasks })(TaskList);
+export default connect(mapStateToProps, { addTask, removeTask, clearTasks, loadTasksFromLocalStorage })(TaskList);
