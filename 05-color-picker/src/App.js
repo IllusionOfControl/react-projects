@@ -3,18 +3,12 @@ import Color from "color";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { v4 as uuidv4 } from "uuid";
 import "./App.scss";
-
-const colorFormats = {
-  HEX: "HEX",
-  RGB: "RGB",
-  HSL: "HSL"
-}
+import Shade from './Shade'
 
 const App = () => {
   const [input, setInput] = useState("");
   const [shades, setShades] = useState([]);
   const [copied, setCopied] = useState(false);
-  const [format, setFormat] = useState(colorFormats.HEX)
 
   const handleInputChange = (event) => {
     setShades([]);
@@ -124,19 +118,7 @@ const App = () => {
                 </small>
               </div>
               {shades.slice(0, 10).map((shade) => (
-                <CopyToClipboard
-                  text={shade.hex()}
-                  onCopy={() => handleCopyStatsus()}
-                  key={uuidv4()}
-                >
-                  <div className="shade-item">
-                    <div
-                      className="preview"
-                      style={{ background: shade.hex() }}
-                    ></div>
-                    <span className="color-code">{shade.hex()}</span>
-                  </div>
-                </CopyToClipboard>
+                <Shade shade={shade} handleCopyStatus={handleCopyStatus}/>
               ))}
             </div>
 
@@ -149,19 +131,7 @@ const App = () => {
                 </small>
               </div>
               {shades.slice(10, 20).map((shade) => (
-                <CopyToClipboard
-                  text={shade.hex()}
-                  onCopy={() => handleCopyStatus()}
-                  key={uuidv4()}
-                >
-                  <div className="shade-item">
-                    <div
-                      className="preview"
-                      style={{ background: shade.hex() }}
-                    ></div>
-                    <span className="color-code">{shade.hex()}</span>
-                  </div>
-                </CopyToClipboard>
+                <Shade shade={shade} handleCopyStatus={handleCopyStatus}/>
               ))}
             </div>
           </div>

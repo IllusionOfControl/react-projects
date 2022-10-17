@@ -1,4 +1,4 @@
-# Color picker
+# Color Shade Generator
 
 To launch a project in the project directory:
 

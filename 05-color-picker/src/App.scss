@@ -10,7 +10,7 @@ body {
   --clr-background: #eeeeee;
   --clr-form-input: #eb3030;
   --clr-form-submit: #340505;
-  --clr-shade-border: #F06464;
+  --clr-shade-border: #f06464;
   --sans-serif: "Jost", sans-serif;
   --monospace: "Space Mono", monospace;
 }
@@ -32,7 +32,7 @@ body {
   font-family: var(--sans-serif);
   font-size: 1rem;
   background-color: var(--clr-background);
-  color: var(--text-primary );
+  color: var(--text-primary);
   overflow-x: hidden;
 }
 
@@ -75,7 +75,7 @@ body {
     }
     a {
       text-decoration: underline;
-      color: #1270E3;
+      color: #1270e3;
     }
   }
 
@@ -87,7 +87,7 @@ body {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
       rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    border: 2px solid #ED4A4A;
+    border: 2px solid #ed4a4a;
     border-radius: var(--radius);
     padding: 0.5rem 2rem;
     font-size: 1.5rem;
@@ -211,7 +211,7 @@ body {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
       rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    border: 2px solid #F06464;
+    border: 2px solid #f06464;
     padding: 1rem;
     flex: 1;
     display: flex;
@@ -335,7 +335,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
       rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     position: relative;
-    cursor: pointer;
+    // cursor: pointer;
     transition: box-shadow 100ms cubic-bezier(0.215, 0.61, 0.355, 1);
 
     &:hover {
@@ -349,15 +349,28 @@ body {
     height: var(--size);
   }
 
-  .color-code {
-    display: flex;
+  .info {
     padding: 0.5rem;
-    align-items: center;
-    justify-content: center;
     font-family: var(--monospace);
     background-color: #fff;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #34495e;
     font-weight: 400;
+
+    .format-copy {
+      width: 100%;
+
+      span {
+        padding: 2px 4px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      span:hover {
+        border-color: #ed4a4a;
+      }
+    }
   }
 }
