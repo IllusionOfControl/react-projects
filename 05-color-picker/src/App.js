@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import Color from "color";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { v4 as uuidv4 } from "uuid";
 import "./App.scss";
 import Shade from './Shade'
 
 const App = () => {
   const [input, setInput] = useState("");
+  const [color, setColor] = useState([]);
   const [shades, setShades] = useState([]);
   const [copied, setCopied] = useState(false);
 
   const handleInputChange = (event) => {
-    setShades([]);
     setInput(event.target.value);
   };
 
@@ -30,13 +29,14 @@ const App = () => {
     return regex.test(str);
   };
 
-  const handleFormSubmit = (event, color) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     const variants = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
     const lightShades = variants.map((num) => Color(input).lighten(num));
     const darkShades = variants.map((num) => Color(input).darken(num));
     const shades = [...lightShades, ...darkShades];
     setShades(shades);
+    setColor(input);
   };
 
   const handleCopyStatus = () => {
@@ -79,32 +79,32 @@ const App = () => {
             <div className="color-type info-box">
               <div>
                 <h5>Color Type</h5>
-                <p>{input && Color(input).isDark() ? "Dark" : "Light"}</p>
+                <p>{color && Color(color).isDark() ? "Dark" : "Light"}</p>
               </div>
 
               <div
                 className="color-preview"
-                style={{ background: input }}
+                style={{ background: color }}
               ></div>
             </div>
 
             <div className="color-hsl info-box">
               <h5>HSL Value</h5>
               <CopyToClipboard
-                text={Color(input).hsl().string(0)}
+                text={Color(color).hsl().string(0)}
                 onCopy={() => handleCopyStatus()}
               >
-                <button>{input && Color(input).hsl().string(0)}</button>
+                <button>{color && Color(color).hsl().string(0)}</button>
               </CopyToClipboard>
             </div>
 
             <div className="color-rgb info-box">
               <h5>RBG Value</h5>
               <CopyToClipboard
-                text={Color(input).rgb().toString()}
+                text={Color(color).rgb().toString()}
                 onCopy={() => handleCopyStatus()}
               >
-                <button>{input && Color(input).rgb().toString()}</button>
+                <button>{color && Color(color).rgb().toString()}</button>
               </CopyToClipboard>
             </div>
           </div>
