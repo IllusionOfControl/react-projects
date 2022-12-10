@@ -12,6 +12,7 @@ Projects:
 - [06-restaurant]
 - [07-weather-app]
 - [08-extended-task-list]
+- [09-tailwind-css]
 
 [course]: https://www.udemy.com/course/react-tutorial-and-projects-course
 [00-blog-app]: 00-blog-app/README.md
@@ -23,3 +24,5 @@ Projects:
 [06-restaurant]: 06-restaurant/README.md
 [07-weather-app]: 07-weather-app/README.md
 [08-extended-task-list]: 08-extended-task-list/README.md
+[09-tailwind-css]: 09-tailwind-css/README.md 
+
