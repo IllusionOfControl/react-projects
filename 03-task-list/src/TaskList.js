@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import {useInput} from "./hooks";
 
 const TaskList = ({
                     tasks,
@@ -6,17 +6,12 @@ const TaskList = ({
                     onRemoveAll,
                     onAdd
                   }) => {
-  const taskInput = useRef(null);
-
-  const addTask = () => {
-    const newTask = taskInput.current.value;
-    taskInput.current.value = "";
-    onAdd(newTask);
-  }
+  const [taskProps, resetTask] = useInput("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addTask();
+    onAdd(taskProps.value);
+    resetTask();
   }
 
   return (
@@ -29,8 +24,8 @@ const TaskList = ({
         <div className="formContainer">
           <form className="taskForm" onSubmit={handleSubmit}>
             <input
+              {...taskProps}
               className="taskInput"
-              ref={taskInput}
               placeholder="What would you like to do today?"
             />
           </form>
