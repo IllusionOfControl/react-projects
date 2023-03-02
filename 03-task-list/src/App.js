@@ -1,9 +1,30 @@
 import TaskList from './TaskList'
+import {useState} from "react";
 
-function App() {
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+
+  const handleRemove = (index) => {
+    const newTasks = tasks.filter((task, i) => i !== index);
+    setTasks(newTasks);
+  }
+
+  const handleRemoveAll = () => {
+    setTasks([]);
+  }
+
+  const handleAdd = (newTask) => {
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <main className="App">
-      <TaskList/>
+      <TaskList
+        tasks={tasks}
+        onAdd={handleAdd}
+        onRemove={handleRemove}
+        onRemoveAll={handleRemoveAll}
+      />
     </main>
   );
 }
