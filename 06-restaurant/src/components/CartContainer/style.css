@@ -24,6 +24,10 @@
   font-size: 1.75rem;
 }
 
+.centered {
+  text-align: center;
+}
+
 .clear-btn {
   background: transparent;
   padding: 0.5rem 1rem;
@@ -33,6 +37,7 @@
   border-radius: var(--radius);
   font-size: 1rem;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .clear-btn:hover {

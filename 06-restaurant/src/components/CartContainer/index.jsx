@@ -26,9 +26,11 @@ const CartContainer = () => {
           Total <span>${total}</span>
         </h4>
       </div>
-      <button className='btn clear-btn' onClick={clearCart}>
-        Clear cart
-      </button>
+      <div className="centered">
+        <button className='btn clear-btn' onClick={clearCart}>
+          Clear cart
+        </button>
+      </div>
     </div>
   );
 }
