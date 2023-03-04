@@ -172,6 +172,10 @@ main {
   text-align: center;
 }
 
+.error {
+  text-align: center;
+}
+
 .title {
   text-align: center;
   margin-bottom: 4rem;
@@ -235,18 +239,6 @@ main {
 
 .single-tour footer {
   padding: 1.5rem 2rem;
-}
-
-.single-tour .delete-btn {
-  display: block;
-  width: 200px;
-  margin: 1rem auto 0 auto;
-  color: var(--clr-red-dark);
-  letter-spacing: var(--spacing);
-  background: transparent;
-  border: 1px solid var(--clr-red-dark);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
 }
 
 .prev-btn,

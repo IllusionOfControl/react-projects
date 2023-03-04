@@ -2,36 +2,29 @@ import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Tour from './Tour'
 
-const ToursSlider = ({ tours }) => {
-  const [index, setIndex] = useState(0);
+const useIterator = (items = [], initialIndex = 0) => {
+  const [index, setIndex] = useState(initialIndex);
 
-  const checkNumber = (number) => {
-    const lastTour = tours.length - 1;
-    if (number > lastTour) {
-      return 0;
-    }
-    if (number < 0) {
-      return lastTour;
-    }
-    return number;
+  const prev = () => {
+    if (index === 0) return setIndex(items.length - 1);
+    setIndex(index - 1);
   };
 
-  const nextTour = () => {
-    setIndex((index) => {
-      return checkNumber(index + 1);
-    })
-  }
+  const next = () => {
+    if (index === items.length - 1) return setIndex(0);
+    setIndex(index + 1);
+  };
 
-  const prevTour = () => {
-    setIndex((index) => {
-      return checkNumber(index - 1);
-    })
-  }
+  return [items[index], prev, next];
+}
+
+const ToursSlider = ({ tours }) => {
+  const [tour, prevTour, nextTour] = useIterator(tours, 0);
 
   return (
     <section>
       <div>
-        <Tour {...tours[index]} />
+        <Tour {...tour} />
       </div>
 
       <div className='button-container'>
