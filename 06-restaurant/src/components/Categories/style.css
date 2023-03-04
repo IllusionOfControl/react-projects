@@ -20,6 +20,10 @@
     border-radius: var(--radius);
 }
 
+.active {
+    border: 2px solid var(--clr-gold);
+}
+
 .filter-btn:hover {
     background: var(--clr-gold);
     color: var(--clr-white);

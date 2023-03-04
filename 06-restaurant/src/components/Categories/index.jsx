@@ -1,19 +1,20 @@
 import React from 'react';
-import { useGlobalContext } from '../../context';
 import './style.css';
 
-const Categories = () => {
-  const { categories, filterMenu } = useGlobalContext();
-
+const Categories = ({
+  categories,
+  filter,
+  onSelectCategory,
+}) => {
   return (
     <div className="btn-container">
       {categories.map((category, index) => {
         return (
           <button
             type="button"
-            className="filter-btn"
+            className={(category === filter ? 'filter-btn active': 'filter-btn')}
             key={index}
-            onClick={() => filterMenu(category)}
+            onClick={() => onSelectCategory(category)}
           >
             {category}
           </button>
