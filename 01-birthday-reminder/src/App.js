@@ -4,7 +4,7 @@ import data from './data'
 
 
 const App = () => {
-  const [persons, setPersons] = useState(data)
+  const [persons, ] = useState(data)
 
   return (
     <main>
