@@ -3,6 +3,7 @@
   --clr-text: #313131;
   --clr-white: #fff;
   --container-width: 500px;
+  --container-height: 600px;
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -23,13 +24,13 @@ h4 {
 }
 
 body {
-  font-family: 'Segoe UI';
+  font-family: 'Segoe UI', serif;
   background-color: var(--clr-background);
   color: var(--clr-text);
 }
 
 main {
-  min-height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,10 +39,12 @@ main {
 .container {
   background-color: var(--clr-white);
   max-width: var(--container-width);
+  max-height: var(--container-height);
   border-radius: 5px;
   width: 90vw;
   box-shadow: var(--dark-shadow);
   padding: 15px 25px;
+  overflow-y: scroll;
 }
 
 .container h3 {
