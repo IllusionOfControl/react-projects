@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './style.css';
-import { useGlobalContext } from '../../context';
+import {useCartContext} from "../../contexts/CartContext";
 
 const Navbar = () => {
-  const {amount} = useGlobalContext();
+  const {amount} = useCartContext();
 
   return (
     <nav className='navbar'>

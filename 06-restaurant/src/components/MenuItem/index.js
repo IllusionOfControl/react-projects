@@ -1,11 +1,11 @@
 import React from "react";
 import './style.css';
 
-const MenuItem = ({item, onAddToCart = f => f}) => {
+const MenuItem = ({item, onAddToCart}) => {
   return (
     <article className='menu-item'>
       <div className="overlay">
-        <button onClick={() => { onAddToCart(item.id); }}>Add to cart</button>
+        <button onClick={() => { onAddToCart(item); }}>Add to cart</button>
       </div>
       <img src={item.img} alt={item.title} className='photo' />
       <div className='item-info'>

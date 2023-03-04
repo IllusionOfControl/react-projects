@@ -1,15 +1,13 @@
 import React from 'react';
-import { useCartContext } from '../../context/CartContext'
+import { useCartContext } from '../../contexts/CartContext'
 import { MenuItem } from '../'
 import './style.css';
-import {useGlobalContext} from "../../context";
 
 const Menu = ({
   items,
   filter,
 }) => {
-  const { addToCart } = useGlobalContext();
-  //const { addItemToCart } = useCartContext();
+  const { addItemToCart } = useCartContext();
 
   return (
     <div className='section-center'>
@@ -19,7 +17,7 @@ const Menu = ({
           <MenuItem
             key={item.id}
             item={item}
-            onAddToCart={addToCart}
+            onAddToCart={addItemToCart}
           />
         )
       }
