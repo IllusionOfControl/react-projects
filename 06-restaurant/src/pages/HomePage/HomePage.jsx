@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { Categories, MenuGrid } from '../components';
-import {useCategories, useMenu} from "../hooks";
+import { Categories, MenuGrid } from '../../components/index.js';
+import {useCategories, useMenu} from "../../hooks/index.js";
 
 const Home = () => {
   const menuItems = useMenu();

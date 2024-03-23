@@ -1,18 +1,20 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React from 'react';
-import {Navbar} from './components'
-import { Home, About, Cart } from './pages';
+import React, {Suspense} from 'react';
+import { Navbar } from './components'
+import { AboutPageAsync, CartPageAsync, HomePageAsync } from './pages';
 
 const App = () => {
   return (
     <Router>
-    <Navbar />
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='about' element={<About />} />
-      <Route path='cart' element={<Cart/>} />
-    </Routes>
-  </Router>
+      <Navbar/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route exact path='/' element={<HomePageAsync/>}/>
+          <Route path='/about' element={<AboutPageAsync/>}/>
+          <Route path='/cart' element={<CartPageAsync/>}/>
+        </Routes>
+      </Suspense>
+    </Router>
   )
 }
 

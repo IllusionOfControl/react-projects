@@ -4,7 +4,7 @@ import buildModules from "./buildModules.js";
 import buildPlugins from "./buildPlugins.js";
 
 const buildWebpackConfig = (config) => {
-    const { mode, entry, paths, isDev } = config
+    const { mode, paths, isDev } = config
     return {
         mode: mode,
         entry: paths.entry,

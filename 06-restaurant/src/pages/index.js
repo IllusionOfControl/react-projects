@@ -1,5 +1,5 @@
-import Home from './Home'
-import About from './About'
-import Cart from './Cart'
+import { HomePageAsync } from './HomePage/HomePage.async.js'
+import AboutPageAsync from './AboutPage/AboutPage.async.js'
+import { CartPageAsync } from './CartPage/CartPage.async.js'
 
-export { Home, About, Cart };
+export { HomePageAsync, AboutPageAsync, CartPageAsync };

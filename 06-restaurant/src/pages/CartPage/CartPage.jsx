@@ -1,7 +1,7 @@
 import React from "react";
-import { CartContainer } from "../components";
+import { CartContainer } from "../../components/index.js";
 
-const Cart = () => {
+const CartPage = () => {
   return (
     <main>
       <section className="section cart-section">
@@ -15,4 +15,4 @@ const Cart = () => {
   );
 }
 
-export default Cart;
+export default CartPage;
