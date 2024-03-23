@@ -1,58 +1,19 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import buildWebpackConfig from './config/build/buildWebpackConfig.js';
 
-module.exports = {
-    mode: 'development',
-    entry: './src/index.jsx',
-    output: {
-        filename: '[name]_[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'assets/[hash][ext][query]',
-        clean: true,
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const config = {
+    mode: "development",
+    paths: {
+        entry: path.resolve(__dirname, 'src', 'index.jsx'),
+        build: path.resolve(__dirname, 'dist'),
+        html: path.resolve(__dirname, 'public', 'index.html')
     },
-    resolve: {
-        extensions: ['.jsx', '.js']
-    },
-    devServer: {
-        historyApiFallback: true,
-        static: {
-            directory: path.join(__dirname, "/dist"),
-        },
-        port: 8080,
-        open: true
-    },
-    module:{
-        rules:[
-            {
-                test: /\.jsx?$/,
-                exclude: /(node_modules)/,
-                loader: "babel-loader",
-                options:{
-                    presets:[["@babel/preset-react", {"runtime": "automatic"}]]
-                }
-            },
-            {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-        ]
-    },
-    plugins: [
-        new webpack.ProgressPlugin(),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'public', 'index.html')
-        }),
-        new CopyPlugin({
-            patterns:[
-                {from: 'public/manifest.json', to: "manifest.json"},
-                {from: 'public/robots.txt', to: "robots.txt"}
-            ]
-        })
-    ],
-};
+}
+
+const webpackConfig = buildWebpackConfig(config);
+
+export default webpackConfig;
