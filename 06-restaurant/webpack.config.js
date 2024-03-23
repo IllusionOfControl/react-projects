@@ -2,18 +2,23 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import buildWebpackConfig from './config/build/buildWebpackConfig.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-const config = {
-    mode: "development",
-    paths: {
-        entry: path.resolve(__dirname, 'src', 'index.jsx'),
-        build: path.resolve(__dirname, 'dist'),
-        html: path.resolve(__dirname, 'public', 'index.html')
-    },
-}
+export default (env) => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
 
-const webpackConfig = buildWebpackConfig(config);
+    const mode = env.mode || "development";
+    const port = env.port || 8080;
+    const isDev = mode === "development";
 
-export default webpackConfig;
+    return buildWebpackConfig({
+        mode,
+        port,
+        isDev,
+        paths: {
+            entry: path.resolve(__dirname, 'src', 'index.jsx'),
+            build: path.resolve(__dirname, 'dist'),
+            html: path.resolve(__dirname, 'public', 'index.html')
+        },
+    });
+};
